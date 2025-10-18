@@ -1,0 +1,113 @@
+/* Code Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #143c3c;
+    --secondary-color: #e2eddf;
+    --primary-color-textColor: #152427;
+    --secondary-color-textColor: #7d8188;
+    --text-color-black-gray: #575d5e;
+}
+
+html {
+    /* 62.5% of 16px user agent font size is 10px */
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.background {
+    background-color: #143c3c;
+    height: 300px;
+}
+
+.content {
+    width: 1140px;
+    max-width: calc(100% - (2 * 15px));
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+}
+
+.button {
+    height: 57px;
+    padding: 0 52px;
+    color: var(--text-color-white, #fff);
+    text-align: center;
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    border-radius: 40px;
+    border: 1.5px solid var(--primary-color);
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* End Code Base */
+/* Header */
+.header--sticky {
+    position: sticky;
+    top: 28px;
+    z-index: 100;
+}
+
+.header__wrapper {
+    margin-top: 28px;
+    align-items: center;
+    border-bottom: 1px solid #dddcdc;
+    padding-bottom: 13px;
+}
+
+.header__nav {
+    margin-left: auto;
+}
+
+.header__nav-link {
+    color: var(--text-color-black-gray);
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+.header__nav-link--active {
+    color: var(--primary-color-textColor);
+    position: relative;
+}
+
+.header__nav-link--active::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -32px;
+    left: 0;
+}
+
+.header__nav-list {
+    align-items: center;
+    gap: 38px;
+    margin-right: 88px;
+}
