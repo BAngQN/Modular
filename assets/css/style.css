@@ -46,7 +46,8 @@ a {
 
 .button {
     height: 57px;
-    padding: 0 52px;
+    min-width: 173px;
+    padding: 0 4px;
     color: var(--text-color-white, #fff);
     text-align: center;
     font-family: "Public Sans", sans-serif;
@@ -68,12 +69,17 @@ a {
 /* Header */
 .header--sticky {
     position: sticky;
-    top: 28px;
+    top: 0;
+    left: 0;
     z-index: 100;
 }
 
+.header {
+    background-color: #fff;
+    padding-top: 28px;
+}
+
 .header__wrapper {
-    margin-top: 28px;
     align-items: center;
     border-bottom: 1px solid #dddcdc;
     padding-bottom: 13px;
@@ -90,7 +96,8 @@ a {
     line-height: 2.8rem;
 }
 
-.header__nav-link--active {
+.header__nav-link--active,
+.header__nav-link:hover {
     color: var(--primary-color-textColor);
     position: relative;
 }
@@ -110,4 +117,100 @@ a {
     align-items: center;
     gap: 38px;
     margin-right: 88px;
+}
+
+/* Hero */
+.hero {
+    padding: 60px 0 87px;
+    position: relative;
+}
+
+.hero__wrapper {
+    align-items: center;
+}
+
+.hero__info {
+    flex: 1;
+}
+
+.hero__heading {
+    width: 368px;
+    color: var(--primary-color-textColor);
+    font-family: "Public Sans", sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 6rem;
+}
+
+.hero__desc {
+    width: 341px;
+    color: var(--text-color-black-gray, #575d5e);
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    margin-top: 20px;
+}
+
+.hero__cta {
+    display: flex;
+    gap: 43px;
+    margin-top: 42px;
+}
+
+.hero__media {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-right: 25px;
+}
+
+.hero__media-img {
+    display: inline-block;
+    width: 202px;
+    height: 466px;
+    object-fit: cover;
+    border-radius: 110px;
+    filter: brightness(0.9);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 10;
+}
+
+.hero__media-img:hover {
+    filter: brightness(1);
+    transform: scale(1.05);
+}
+
+.hero__media-img:nth-child(2) {
+    margin-top: 77px;
+}
+
+.hero__ornament {
+    display: inline;
+}
+
+.ornament__star {
+    width: 72.033px;
+    height: 72px;
+    position: absolute;
+    top: 35px;
+    left: 254px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.ornament__line {
+    position: absolute;
+    top: 25px;
+    left: 293px;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.hero__ornament--reverse {
+    transform: rotate(180deg);
+    position: absolute;
+    right: -231px;
+    bottom: 0;
 }
