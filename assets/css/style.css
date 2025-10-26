@@ -65,6 +65,36 @@ a {
     transition: all 0.3s ease-in-out;
 }
 
+.label {
+    position: relative;
+    color: var(--primary-color-textColor);
+    font-size: 1.6rem;
+    padding-left: 46px;
+}
+
+.label::before {
+    content: "";
+    width: 25px;
+    height: 1px;
+    background-color: var(--primary-color-textColor);
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.section__heading {
+    color: var(--primary-color-textColor);
+    font-size: 4.2rem;
+    font-weight: 600;
+    line-height: 5.2rem;
+}
+
+.section__desc {
+    color: var(--secondary-color-textColor);
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
 /* End Code Base */
 /* Header */
 .header--sticky {
@@ -202,31 +232,32 @@ a {
 }
 
 .hero__ornament {
-    display: inline;
+    position: absolute;
+    left: 254px;
+    top: 35px;
 }
 
 .ornament__star {
     width: 72.033px;
     height: 72px;
     position: absolute;
-    top: 35px;
-    left: 254px;
+    top: 0;
+    left: 0;
     z-index: 15;
     pointer-events: none;
 }
 
 .ornament__line {
     position: absolute;
-    top: 25px;
-    left: 293px;
+    top: -10px;
+    left: 39px;
     z-index: 14;
     pointer-events: none;
 }
 
 .hero__ornament--reverse {
     transform: rotate(180deg);
-    position: absolute;
-    right: -231px;
+    right: 35px;
     bottom: 0;
 }
 
@@ -265,14 +296,6 @@ a {
     margin-top: 106px;
 }
 
-.service__label {
-    position: relative;
-    color: var(--primary-color-textColor);
-    font-size: 1.6rem;
-    line-height: 2.6rem;
-    padding-left: 46px;
-}
-
 .service__label::before {
     content: "";
     width: 25px;
@@ -292,10 +315,6 @@ a {
 .service__title {
     position: relative;
     width: 520px;
-    color: var(--primary-color-textColor);
-    font-size: 4.2rem;
-    font-weight: 600;
-    line-height: 5.2rem;
 }
 
 .service__title::after {
@@ -371,6 +390,173 @@ a {
     width: 268px;
     color: var(--secondary-color-textColor);
     margin-top: 18px;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+}
+
+/* About Us */
+.about {
+    margin-top: 157px;
+}
+
+.about__wrapper {
+    position: relative;
+}
+
+.about__media {
+    position: relative;
+    flex-basis: 51%;
+    display: flex;
+    gap: 21px;
+}
+
+.about__img {
+    max-width: 100%;
+    width: 286px;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 210px;
+    box-shadow: 0 4px 234px 11px rgba(59, 137, 71, 0.25);
+}
+
+.about__img:first-child {
+    width: 284px;
+    margin-top: 40px;
+}
+
+.about__ornament {
+    position: absolute;
+    top: -36px;
+    left: 46px;
+}
+
+.about__ornament .ornament__line {
+    top: 38px;
+    left: 35px;
+}
+
+.about__card {
+    min-width: 143px;
+    padding: 19px 23px 12px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 7px 54px 0 rgba(154, 154, 154, 0.25);
+    text-align: start;
+    position: absolute;
+    bottom: 0;
+    right: -9px;
+}
+
+.about__card-title {
+    color: var(--primary-color-textColor);
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4rem;
+}
+
+.about__card-balance {
+    color: var(--secondary-color-textColor);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-top: 6px;
+}
+
+.about__card-percent {
+    color: var(--primary-color-textColor);
+    line-height: 1.4rem;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.about__card-progress {
+    height: 2px;
+    border-radius: 10px;
+    background: #eaeaea;
+    margin-top: 3px;
+}
+
+/* set display:block if you want this view is in line at parent view
+it only creates a new block inside its parent box — not outside. */
+.about__card-progress::after {
+    content: "";
+    width: 40px;
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    background: var(--primary-color);
+}
+
+.about__loading-status {
+    color: var(--primary-color-textColor);
+    line-height: 1.4rem;
+    font-size: 1rem;
+    margin-top: 3px;
+    text-align: end;
+}
+
+.about__card-team {
+    color: var(--primary-color-textColor);
+    font-size: 1rem;
+    line-height: 1.4rem;
+    margin-top: 5px;
+}
+
+.about__card-info {
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 30px;
+}
+
+.about__card-members {
+    display: flex;
+    align-items: center;
+}
+
+.about__card-member {
+    width: 16px;
+    height: 16px;
+    flex: 1;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.about__card-member:hover {
+    flex: 2;
+    transform: scale(1.4);
+}
+
+.about__card-member:not(:first-child) {
+    margin-left: -6px;
+}
+
+.about__info {
+    margin-left: 64px;
+    flex: 1;
+}
+
+.about__heading {
+    margin-top: 20px;
+}
+
+.about__desc {
+    width: 478px;
+    margin: 11px 0 2px;
+}
+
+.about__statistics {
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 36px;
+    padding-bottom: 20px;
+}
+
+.about__statistics-desc {
+    width: 364px;
+    color: var(--secondary-color-textColor);
     font-size: 1.4rem;
     line-height: 2.4rem;
 }
